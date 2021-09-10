@@ -15,8 +15,8 @@ $vocabSite = [
 	"nom du site"
 ];
 $vocabPage = [
-	["Acceuil", 0],
-	["Connexion", 1],
-	["A propos", 1]
+	["acceuil", 0],
+	["connexion", 1],
+	["infos", 1]
 ];
 ?>
