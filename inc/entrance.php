@@ -1,3 +1,6 @@
+<?php
+if(isset($_COOKIE['login']))
+?>
 <div class="contentdiv">
 	<div class="butdiv">
 		<h1>Inscription</h1>
@@ -12,14 +15,14 @@
 			<label for="pseudo">
 				<a class="infobulle">
 				   <img src="img/icon_what.png" alt="?"> 
-				   <span><img src="https://www.scriptol.fr/images/apache.png">
-					La description avec une image.
+				   <span><img src="img/icon_infobulle.png">
+					Entrez un identifiant de 20 caractères composés exclusivement de lettre sans accent ni symbole ni espace.
 				   </span>
 				</a>
 				Pseudo :
 			</label>
 			
-			<input name="login" type="text" placeholder="Votre pseudo" id="pseudo" required>
+			<input name="login" type="text" autocomplete="off" placeholder="Votre pseudo" id="pseudo" minlength="4" maxlength="20" required>
 
 
 			<label for="password">
@@ -32,14 +35,14 @@
 				Password :
 			</label>
 			
-			<input name="password" type="password" id="password" value="123456" required>
+			<input name="pass" autocomplete="off" type="password" id="password" placeholder="******" required>
 				
 				
 			<label for="password2">
 				Répéter :
 			</label>
 			
-			<input name="password2" type="password" id="password2" value="123654" required>
+			<input name="pass2" autocomplete="off" type="password" id="password2" placeholder="******" required>
 
 
 			<label for="mail">
@@ -54,7 +57,7 @@
 				<small>Accepter les <a href="">conditions d'utilisation</a></small>
 			</label>
 			
-			<input class="checkb" id="reglement" name="regl" checked type="checkbox" value="1">
+			<input name="regl" class="checkb" id="reglement" checked type="checkbox" value="1">
 			
 			<label class="longlabel" for="cookies2">
 				<a class="infobulle">
@@ -65,7 +68,8 @@
 				</a>
 				<small>Rester connécté grace à un cookie</small>
 			</label>
-			<input class="checkb" id="cookies2" name="cooki" checked type="checkbox">
+			
+			<input name="cooki" class="checkb" id="cookies2" checked type="checkbox">
 			
 			<input type="submit" value="S'inscrire par e-mail">
 		</form>

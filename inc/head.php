@@ -12,3 +12,4 @@ if($simcraft->connectId() == -1){
 	
 <link rel="stylesheet" href="css/<?php echo $temp; ?>.css">
 <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+<script src="js/jquery-3.6.0.min.js"></script>

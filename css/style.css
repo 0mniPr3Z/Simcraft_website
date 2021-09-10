@@ -51,6 +51,9 @@ body{
 	border-radius: 0.4em;
 }
 .pageHeader ul li:hover {
+
+}
+.pageHeader .active{ 
   background: #FFB442;
 }
 .pageHeader ul li:active {
@@ -73,7 +76,7 @@ body{
   -webkit-border-radius:6px;
   border-radius:6px;
   color:black;
-  background-color:rgba(0, 255, 0, .9); 
+  background-color:white; 
 }
  
  
@@ -86,15 +89,24 @@ body{
  
 .infobulle:hover span
 {
+	color:black;
   display:block;
   position:absolute;
-  bottom:10px;
-  left:-310px;
+  
+  bottom:-25px;
+  right:20px;
+  
   z-index:10;
-  width:300px;
-  border:3px solid green;
+  
+  height:44px;
+  width:160px;
+  
+  border:1px solid grey;
   overflow:hidden;
   padding:8px;
+  
+  font-size:10px;
+  border-radius:4px;
 }
 
 .infobulle img {
@@ -103,6 +115,8 @@ body{
 	-webkit-transition: .1s ease-in-out;
 	transition: .1s ease-in-out;
 	z-index:15;
+	float:left;
+	margin-left:20px;
 }
 .infobulle img:hover{
 	-webkit-transform: scale(2);

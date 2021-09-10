@@ -28,7 +28,7 @@ require_once'libs/simcraft.php';
 		}
 	?>
 	<div class="pageFooter">
-		bla
+		<?php include'inc/footer.php';?>
 	</div>
 </body>
 </html>

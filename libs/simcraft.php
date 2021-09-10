@@ -6,11 +6,17 @@ class SIMCRAFT{
     protected $dbname     = 'simcraft_0';
     protected $host     = 'localhost';
 /*===========================*/	
-	
-	
+//Gestion de cookies
+private function setTempCookie($name, $value){
+	$timestamp = time() + 60 * 3;
+	setcookie($name, $value, $timestamp);
+}
+public function tempCookieSub($post){
+	$this->setTempCookie('loginsub',$post['login']);
+	$this->setTempCookie('mail',$post['mail']);
+}
 //DataBase Basic Function
 private function db(){
-	
     try{
         $pdo = new PDO("mysql:host=".$this->host.";dbname=".$this->dbname, $this->username, $this->password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -29,6 +35,62 @@ private function reqFetchAll($sql){
     $req->execute();
 	return $req->fetchAll(PDO::FETCH_ASSOC);
 }
+
+//Subscribe sanity login
+private function checkLoginSyntax($login){
+	if(preg_match('`^([a-zA-Z]{1,20})$`', $login))
+		return 1;
+	return 0;
+}
+private function checkLoginExist($login){
+	$sql = '"SELECT * FROM users WHERE login = '.strtolower($login).'"';
+	$user = $this->reqFetchAll($sql);
+	if(count($user) > 0)
+		return 1;
+	return 0;
+}
+private function checkLogin($login){
+	if($login != NULL){
+		if($this->checkLoginSyntax($login) == 1){
+			if($this->checkLoginExist($login) != 1){
+				return 1;
+			}else{
+				return 4;
+			}
+		}else{
+			return 2;
+		}
+	}else{
+		return 3;
+	}
+}
+//Subscribe
+public function inscription($login, $pass, $pass2, $mail, $regl, $cooki){
+	if($this->checkLogin($login) == 1){
+		$loginOK = strtolower($login);
+		if($this->checkMail()){
+			return 1;
+		}
+	}else{
+		return $this->checkLogin($login);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Check Data
 private function checkedUserConnect($login, $pass){
 	$sql = "SELECT * FROM users WHERE login = '".$login."' AND pass = '".$pass."'";
@@ -109,57 +171,6 @@ public function connectedMembers(){
 	}else{
 		return 0;
 	}
-}
-//Subscribe sanity login
-private function checkLoginSyntax($login){
-	if(preg_match('^[a-zA-Z]{1,20}$', $login))
-		return 1;
-	return 0;
-}
-private function checkLoginExist($login){
-	$sql = '"SELECT * FROM users WHERE login = '.strtolower($login).'"';
-	$user = $this->reqFetchAll($sql);
-	if(count($user) > 0)
-		return 1;
-	return 0;
-}
-private function checkLogin($login){
-	if($login != NULL){
-		if($this->checkLoginSyntax($login) == 1){
-			if($this->checkLoginExist($login) != 1){
-				return 1;
-			}else{
-				return 4;
-			}
-		}else{
-			return 2;
-		}
-	}else{
-		return 3;
-	}
-}
-//Subscribe
-public function inscription($login, $password, $password2, $reglement, $cookies){
-	if($this->checkLogin($login) == 1){
-		$loginOK = strtolower($login);
-		if($this->checkMail){
-			return 1;
-		}
-	}else{
-		return checkLogin($login);
-	}
-}
-private function checkSubscribe($login, $pass, $mail, $cookies,$psy, $phys){
-	if(checkUserByLogin($login) == -1){
-		if(checkUserByMail($mail) == -1){
-			createUser($login, $pass, $mail, $cookies,$psy, $phys);
-		}else{
-			$erreur = "Le login est déjà pris";
-		}
-	}else{
-		$erreur = "Le login est déjà pris";
-	}
-	return $erreur;
 }
 private function createUser($login, $pass, $mail, $cookies){
 	$psy = rand(0,5);
