@@ -2,7 +2,7 @@ body{
 	width:900px;
 	margin:auto;
 	height:600px;
-	margin-top:40px;
+	margin-top:1em;
 	font-family:Arial;
 	background: blue url("../img/bg.jpg");
   background-repeat: no-repeat;

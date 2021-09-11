@@ -57,7 +57,7 @@ if(isset($_COOKIE['login']))
 				<small><?php echo $vocabSite[12]; ?></small>
 			</label>
 			
-			<input name="regl" class="checkb" id="reglement" checked type="checkbox" value="1">
+			<input name="regl" class="checkb" id="reglement" type="checkbox">
 			
 			<label class="longlabel" for="cookies2">
 				<a class="infobulle">
@@ -69,7 +69,7 @@ if(isset($_COOKIE['login']))
 				<small>Rester connécté grace à un cookie</small>
 			</label>
 			
-			<input name="cooki" class="checkb" id="cookies2" checked type="checkbox">
+			<input name="cooki" class="checkb" id="cookies2" type="checkbox" checked>
 			
 			<input type="submit" value="S'inscrire par e-mail">
 		</form>
