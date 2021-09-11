@@ -3,7 +3,7 @@ class SIMCRAFT{
 /*======= A MODIFIER =======*/
 	protected $username = 'root';
 	protected $password = '';
-    protected $dbname     = 'simcraft_0';
+    protected $dbname     = 'simcraft';
     protected $host     = 'localhost';
 /*===========================*/	
 //Gestion de cookies
@@ -159,7 +159,7 @@ public function connectId(){
 	}
 }
 private function getConnexionList(){
-	$sql = ("SELECT * from connexion");
+	$sql = ("SELECT * from connexions");
 	return $this->reqFetchAll($sql);
 }
 //Connect
