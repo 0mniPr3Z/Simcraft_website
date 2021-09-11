@@ -11,6 +11,7 @@
 
 <title><?php echo $vocabSite[0]; ?></title>
 
+<link href="img/fav.png" rel="icon">
 <link rel="stylesheet" type="text/css" href="css/preloader.css">
 <link rel="stylesheet" type="text/css" href="css/lang.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">

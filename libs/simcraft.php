@@ -207,6 +207,10 @@ private function createUser($login, $pass, $mail, $cookies){
 	$_SESSION['id'] = $value['id'];
 	return "Vous êtes àprésent connecté";
 }
+public function getLastArt(){
+	$sql="SELECT * FROM articles ORDER BY publi_date DESC LIMIT 1";
+	return $this->reqFetchAll($sql)[0];
+}
 }
 
 $simcraft = New SIMCRAFT();

@@ -27,8 +27,8 @@ $vocabSite = [
 	'Accepter les <a href="">conditions d\'utilisation</a>',
 ];
 $vocabPage = [
-	["acceuil", 0],
-	["connexion", 1],
-	["infos", 1]
+	["acceuil", 0, 'fas fa-home'],
+	["connexion", 1, 'fas fa-sign-in-alt'],
+	["infos", 1, 'fas fa-info']
 ];
 ?>

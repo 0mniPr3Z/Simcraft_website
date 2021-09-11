@@ -1,7 +1,7 @@
 .homediv{
 	width:90%;
-	height:82%;
-	border:1px solid blue;
+	height:80%;
+	border:2px solid rgba(255,255,255,.8);
 	margin:auto;
 	margin-top:6%;
 	border-radius: 20px;
@@ -9,16 +9,22 @@
 	background-color:rgba(255, 255, 255, .6);
 }
 .homediv h1{
-	margin-top:1%;
+	margin-top:.1em;
+}
+.homediv hr{
+	width:100%;
 }
 .homediv p{
 	text-indent:4%;
+	text-align:justify;
 	
 }
 .videoPlaya{
 	float:left;
-	margin-right:2%;
+	margin-right:2em;
 	border-radius:.5em;
-	width:380;
-	height:"214;
+	width:380px;
+	height:214px;
+	margin-top:.4em;
+	margin-bottom:1em;
 }
