@@ -1,10 +1,10 @@
 <?php
 class SIMCRAFT{
 /*======= A MODIFIER =======*/
-	protected $username = 'clapitbadmin';
-	protected $password = 'Mird84192515';
-    protected $dbname     = 'clapitbadmin';
-    protected $host     = 'clapitbadmin.mysql.db';
+	protected $username = 'root';
+	protected $password = '';
+    protected $dbname     = 'simcraft_0';
+    protected $host     = 'localhost';
 /*===========================*/	
 //Gestion de cookies
 private function setTempCookie($name, $value){

@@ -22,7 +22,7 @@
 }
 
 .social-menu ul li .fab{
-    font-size: 15px;
+    font-size: 1.1em;
     line-height: 30px;
     transition: .3s;
     color: #000;
@@ -59,4 +59,19 @@
 }
 .social-menu ul li:nth-child(4) a:hover{
     background-color: #000;
+}
+.social-menu ul li:nth-child(5) a:hover{
+    background-color: #FF5722;
+}
+.social-menu ul li:nth-child(5) a:hover svg g path{
+	fill:#fff;
+}
+.svgIco{
+	fill:#000000;
+}
+
+.awesomeLike{
+	fill:#000;
+	height:1.1em;
+	padding-top:.4em;
 }

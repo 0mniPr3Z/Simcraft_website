@@ -5,5 +5,6 @@
             <li><a href="https://www.instagram.com/omniprez/" target="blank"><i class="fab fa-instagram"></i></a></li>
             <li><a href="https://www.facebook.com/omniprez/" target="blank"><i class="fab fa-facebook"></i></a></li>
             <li><a href="https://codepen.io/omniprez"><i class="fab fa-codepen" target="blank"></i></a></li>
+			<li><a href="https://codepen.io/omniprez"><img class="awesomeLike" src='img/icon_wattpad.svg' alt="W"></i></a></li>
         </ul>
     </div>
