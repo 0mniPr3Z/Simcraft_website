@@ -5,7 +5,7 @@ if(isset($_COOKIE['login']))
 	<div class="butdiv">
 		<h1>Inscription</h1>
 		<p class="butp" style="color:<?php echo $Vocab_errorSub[$errorSub][1]; ?>;">
-			<?php echo $Vocab_errorSub[$errorSub][0]; ?>
+			<i><?php echo $Vocab_errorSub[$errorSub][0]; ?></i>
 		</p>
 		
 		<hr>

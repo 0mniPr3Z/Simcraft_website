@@ -1,5 +1,5 @@
 <?php
-session_start();
+	session_start();
 require_once'libs/simcraft.php';
 ?>
 <!doctype html>
@@ -8,6 +8,8 @@ require_once'libs/simcraft.php';
   <?php include'inc/head.php'; ?>
 </head>
 <body>
+	<?php include 'inc/cookiesbar.php';?>
+	<div class="preloader"><div></div></div>
 	<div class="pageHeader">
 		<img class="headerlogo" src="img/logoHeader.png" alt="<?php echo $vocabSite[0]; ?>">
 		<nav>
@@ -30,5 +32,6 @@ require_once'libs/simcraft.php';
 	<div class="pageFooter">
 		<?php include'inc/footer.php';?>
 	</div>
+	<script src="js/someTools.js"></script>
 </body>
 </html>

@@ -12,7 +12,11 @@ $Vocab_errorCo = [
 	[]
 ];
 $vocabSite = [
-	"nom du site"
+	"simcraft",
+	"chargement",
+	"Ce site utilise des cookies pour vous garantir la meilleure expérience utilisateur.",
+	"D'accord",
+	"En savoir plus"
 ];
 $vocabPage = [
 	["acceuil", 0],

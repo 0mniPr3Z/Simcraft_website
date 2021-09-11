@@ -1,14 +1,20 @@
 <div class="contentdiv">
 	<div class="homediv">
-	<h1>Bienvenue sur le site</h1>
-	<h2> Présentation</h2>
+	<h1>Bienvenue sur <?php echo ucfirst($vocabSite[0]); ?></h1>
+		<iframe
+			src="https://www.youtube.com/embed/33VrwHT2ybU"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen class="videoPlaya">
+		</iframe>
+		<h2> Présentation</h2>
 		<p> 
 			Petits êtres jaunes tout en rondeur, aux yeux globuleux, et ne possédant que
 			quatre doigts à chaque main, les Simpson sont une caricature de la famille
 			américaine moyenne, habitant une ville américaine moyenne, peuplée par des
-			américains moyens, où toutes les classes sociales y sont representées.
-			<br>
-			Allez voir le site web : Site SIMPSON. <!-- lien hypertexte -->
+		</p><p>	
+			Allez voir le site web : Site SIMPSON.
 		</p>
 		
 		<h2> Petit historique de la série</h2>
