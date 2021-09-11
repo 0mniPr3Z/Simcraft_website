@@ -12,13 +12,18 @@ if(isset($SmcGet['testget']))
 else
 	$console = "rien dans le get";
 
-//Subscrib
+
+if(isset($_COOKIE['lang'])){
+	$lang = $_COOKIE['lang'];
+}else{
+	$lang = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+}
+
+//Navigation
 if(isset($SmcGet['pg']))
 	$pg = htmlspecialchars($SmcGet['pg']);
 else
 	$pg = 0;
-
-
 //Subscrib
 if(isset($SmcGet['rrrSb']))
 	$errorSub = intval($SmcGet['rrrSb']);

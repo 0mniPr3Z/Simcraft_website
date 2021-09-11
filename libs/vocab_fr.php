@@ -16,7 +16,15 @@ $vocabSite = [
 	"chargement",
 	"Ce site utilise des cookies pour vous garantir la meilleure expérience utilisateur.",
 	"D'accord",
-	"En savoir plus"
+	"En savoir plus",
+	"Inscription",//5
+	"Connexion",
+	"Entrez un identifiant de 20 caractères composés exclusivement de lettre sans accent ni symbole ni espace.",
+	"Identifiant",
+	"Password",
+	"Repeter",//10
+	"Email",
+	'Accepter les <a href="">conditions d\'utilisation</a>',
 ];
 $vocabPage = [
 	["acceuil", 0],

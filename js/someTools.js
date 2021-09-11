@@ -1,3 +1,3 @@
 $(window).on("load", function(){
-	setTimeout(function(){$(".preloader").fadeOut("slow");}, 1000);
+	setTimeout(function(){$(".preloader").fadeOut("slow");}, 100);
 });

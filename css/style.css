@@ -6,7 +6,7 @@ body{
 	font-family:Arial;
 	background: blue url("../img/bg.jpg");
   background-repeat: no-repeat;
-  background-size: 100%  auto;
+  background-size: cover;
   background-attachment: fixed;
 }
 @media screen and (min-width: 992px) {

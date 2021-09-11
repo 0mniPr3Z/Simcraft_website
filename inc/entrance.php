@@ -3,7 +3,7 @@ if(isset($_COOKIE['login']))
 ?>
 <div class="contentdiv">
 	<div class="butdiv">
-		<h1>Inscription</h1>
+		<h1><?php echo $vocabSite[5]; ?></h1>
 		<p class="butp" style="color:<?php echo $Vocab_errorSub[$errorSub][1]; ?>;">
 			<i><?php echo $Vocab_errorSub[$errorSub][0]; ?></i>
 		</p>
@@ -16,10 +16,10 @@ if(isset($_COOKIE['login']))
 				<a class="infobulle">
 				   <img src="img/icon_what.png" alt="?"> 
 				   <span><img src="img/icon_infobulle.png">
-					Entrez un identifiant de 20 caractères composés exclusivement de lettre sans accent ni symbole ni espace.
+						<?php echo $vocabSite[7]; ?>
 				   </span>
 				</a>
-				Pseudo :
+				<?php echo $vocabSite[8]; ?>
 			</label>
 			
 			<input name="login" type="text" autocomplete="off" placeholder="Votre pseudo" id="pseudo" minlength="4" maxlength="20" required>
@@ -32,21 +32,21 @@ if(isset($_COOKIE['login']))
 					La description avec une image.
 					</span>
 				</a>
-				Password :
+				<?php echo $vocabSite[9]; ?>
 			</label>
 			
 			<input name="pass" autocomplete="off" type="password" id="password" placeholder="******" required>
 				
 				
 			<label for="password2">
-				Répéter :
+				<?php echo $vocabSite[10]; ?>
 			</label>
 			
 			<input name="pass2" autocomplete="off" type="password" id="password2" placeholder="******" required>
 
 
 			<label for="mail">
-				E-mail:
+				<?php echo $vocabSite[11]; ?>
 			</label>
 
 			<input name="mail" type="email" id="email" placeholder="Votre adresse mail" required>
@@ -54,7 +54,7 @@ if(isset($_COOKIE['login']))
 			<br>
 			
 			<label class="longlabel" for="reglement">
-				<small>Accepter les <a href="">conditions d'utilisation</a></small>
+				<small><?php echo $vocabSite[12]; ?></small>
 			</label>
 			
 			<input name="regl" class="checkb" id="reglement" checked type="checkbox" value="1">
@@ -86,7 +86,7 @@ if(isset($_COOKIE['login']))
 
 	 </div>
 	<div class="butdiv">
-		<h1>Connexion</h1>
+		<h1><?php echo $vocabSite[6]; ?></h1>
 		<p class="butp" style="color:<?php echo $Vocab_errorCo[$errorCo][1]; ?>;">
 			<?php echo $Vocab_errorCo[$errorCo][0]; ?>
 		</p>
@@ -103,16 +103,9 @@ if(isset($_COOKIE['login']))
 
 			<input type="submit" value="Se connecter">
 		</form>
+		
 		<hr>
 		
-		<button class="loginBtn loginBtn--facebook">
-			Connexion rapide Facebook
-		</button>
-
-		<button class="loginBtn loginBtn--google">
-			Connexion rapide Google
-		</button>
-		<hr>
 		<p class="butp">
 			<br>
 			<?php
@@ -123,6 +116,16 @@ if(isset($_COOKIE['login']))
 					echo "Il n'y a <b>aucun membre</b> connecté sur le site en ce moment.";
 				}
 			?>
+			
 		</p>
+		<hr>
+		
+		<button class="loginBtn loginBtn--facebook">
+			Connexion rapide Facebook
+		</button>
+
+		<button class="loginBtn loginBtn--google">
+			Connexion rapide Google
+		</button>		
 	</div>
 </div>

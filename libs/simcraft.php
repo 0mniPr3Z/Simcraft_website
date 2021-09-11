@@ -1,10 +1,10 @@
 <?php
 class SIMCRAFT{
 /*======= A MODIFIER =======*/
-	protected $username = 'root';
-	protected $password = '';
-    protected $dbname     = 'simcraft_0';
-    protected $host     = 'localhost';
+	protected $username = 'clapitbadmin';
+	protected $password = 'Mird84192515';
+    protected $dbname     = 'clapitbadmin';
+    protected $host     = 'clapitbadmin.mysql.db';
 /*===========================*/	
 //Gestion de cookies
 private function setTempCookie($name, $value){
@@ -14,6 +14,10 @@ private function setTempCookie($name, $value){
 public function tempCookieSub($post){
 	$this->setTempCookie('loginsub',$post['login']);
 	$this->setTempCookie('mail',$post['mail']);
+}
+public function setHoldCookie($name, $value){
+	$timestamp = time() + 60*60*24*6004;
+	setcookie($name, $value, $timestamp);
 }
 //DataBase Basic Function
 private function db(){
@@ -204,6 +208,7 @@ private function createUser($login, $pass, $mail, $cookies){
 	return "Vous êtes àprésent connecté";
 }
 }
+
 $simcraft = New SIMCRAFT();
 include 'libs/gettheget.php';
-include 'libs/vocab_fr.php';
+include 'libs/vocab_'.substr($lang,0,2).'.php';

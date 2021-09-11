@@ -2,6 +2,7 @@ Options +FollowSymlinks
 RewriteEngine on
 RewriteRule ^home$                                 ./index.php?pg=0
 RewriteRule ^acceuil$                              ./index.php?pg=0
+RewriteRule ^acceuil_langueFr$            		   ./index.php?pg=0
 RewriteRule ^connexion$                            ./index.php?pg=1
 RewriteRule ^utilisateur$                          ./index.php?pg=2
 RewriteRule ^infos$                                ./index.php?pg=2
