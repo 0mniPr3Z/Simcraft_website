@@ -5,9 +5,13 @@ INSERT INTO `articles`
 VALUES
 (NULL, <valeur>, <valeur>, <valeur>, <valeur>,, NULL, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-/*Modifier article*/
+/*Modifier element article*/
 UPDATE `articles`
 SET `content` = '<text>'
 WHERE `articles`.`id` = <id>;
 
+INSERT INTO `articles`
+(`autor`,	`lang`,		`title`,	`intro`,	`content`,	`etiquette`)
+VALUES
+(<valeur>,	<!$lang!>,	<valeur>,	<valeur>,	<valeur>,	<!$topic!>);
 

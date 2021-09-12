@@ -12,7 +12,7 @@ $Vocab_errorCo = [
 	[]
 ];
 $vocabSite = [
-	"simcraft",
+	"Clapi.tech",
 	"chargement",
 	"Ce site utilise des cookies pour vous garantir la meilleure expérience utilisateur.",
 	"D'accord",

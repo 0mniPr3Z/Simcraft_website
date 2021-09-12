@@ -1,4 +1,7 @@
-<?php $article = $simcraft->getLastArt(); ?>
+<?php
+	$article = $simcraft->getLastArtHome($lang); 
+	$link = $simcraft->cleanTypo( $article['id'].'-'.utf8_encode($article['title']) );
+?>
 <div class="contentdiv">
 	<div class="homediv">
 		<h1>Bienvenue sur <?php echo ucfirst($vocabSite[0]); ?></h1>
@@ -17,13 +20,13 @@
 					<?php echo utf8_encode(substr($article['intro'], 0, 250)); ?>
 				</p><p>
 					<?php echo utf8_encode(substr($article['content'], 0, 250)); ?>...
-					<a href="article-">Voir la suite</a></p>
+					<a href="article-<?php echo $link; ?>">Voir la suite</a></p>
 					
 		</div>
+		<hr>
 		
-		
-		<div><hr>
-				<h2> Petit historique de la série</h2>
+		<div>
+				<h2></h2>
 				<p>
 					La série "Les Simpson" est crée par Matt Groening et produite par Gracie
 					Films pour la Twentieth Century Fox et la Fox Network.<br>

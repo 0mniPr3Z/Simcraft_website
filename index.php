@@ -8,14 +8,11 @@ require_once'libs/simcraft.php';
   <?php include'inc/head.php'; ?>
 </head>
 <body >
-	<?php include 'inc/cookiesbar.php';?>
-	<div class="lang">
-		<form action="selectlang.php" method="post">
-			<input type="hidden" name="pg" value="<?php echo $pg; ?>">
-			<button class="langIco" name="lang" value="fr" type="submit"><img src="img/flag-square-fr.png" alt="fr"></button>
-			<button class="langIco" name="lang" value="en" type="submit"><img src="img/flag-square-en.png" alt="en"></button>
-		</form>
-	</div>
+	<?php
+		include 'inc/cookiesbar.php';
+		include 'inc/lang.php';
+	?>
+	
 </div>
 	<div class="bg"></div>
 <div class="bg bg2"></div>
@@ -34,7 +31,7 @@ require_once'libs/simcraft.php';
 	<br>
 	  <?php
 		//echo $console;
-		if($simcraft->connectId() != -1){
+		if(isset($player)){
 			
 		}else{
 			if($pg == 1)

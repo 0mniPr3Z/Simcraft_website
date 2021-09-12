@@ -8,5 +8,5 @@ if(isset($_POST['lang']) && ($_POST['lang'] == 'fr' || $_POST['lang'] == 'en')){
 }
 if(isset($_POST['pg']))
 	$pg = intval($_POST['pg']);
-header("Location:index.php?pg=1");
+header("Location:index.php?pg=".$pg);
 ?>
