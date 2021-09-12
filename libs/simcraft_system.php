@@ -1,76 +1,107 @@
 <?php
+$dbConfig 	= array($username,$password,$dbname,$host);
+
 /*:
  *@package		SIMCRAFT
  *@class		SIMCRAFT_SYSTEM
  *@author		0mniPr3z <hernandezpa[at]live.fr>
  *@desc			The class object for the global system processing.
  */
-Class SIMCRAFT_SYSTEM{
-/*:
- * @method	_construct
- * @desc	initialize the system and return 0 if succes or error index
- * @param	{Array}[4]		Array contain db connect informations
- * @param	{Integer}		How many time temp cookies stay in minutes
- * @param	{Integer}		How many time cookies stay in years
- * @return	{Integer} 
- */
-	private function _construct($dbConfig, $tempTime, $stayTime){
-		if(isset($dbConfig) && count($dbConfig) == 4){
-			private $username	= $dbConfig[0];
-			private $password	= $dbConfig[1];
-			private $dbname		= $dbConfig[2];
-			private $host		= $dbConfig[3];
-			return 0;
-		}else{
-			return 1;
-		}
-	}
+abstract class Simcraft_system{
 
+global $username,
+		$password,
+		$dbname,
+		$host,
+		$libPath,
+		$scPath,
+		$modRep,
+		$conRep,
+		$vueRep,
+		$jsRep,
+		$cssRep,
+		$imgRep,
+		$siteUrl,
+		$tempTime,
+		$stayTime;
+
+private function _construct(){
+	return 0;
+}
 //DATABASE METHODS
-/*:
- *@method		db
- *@desc	make	a connection pdo with the database or echo error message
- *@return		return 0 if succes 
- */	
-	private function db(){
-		try{
-			$pdo = new PDO("mysql:host=".$this->host.";dbname=".$this->dbname, $this->username, $this->password);
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			return 0;
-		}catch(PDOException $e){
-			echo  "Erreur : " . $e->getMessage();
-		}
-		return $pdo;
+private static function setDb(){
+	try{
+		self::$pdo = new PDO("mysql:host=".$this->host.";dbname=".$this->dbname, $this->username, $this->password);
+		self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		return 0;
+	}catch(PDOException $e){
+		echo  "Erreur : " . $e->getMessage();
 	}
-/*:
- *@method		reqExec
- *@desc			execute a sql request use db() connexion
- */	
-	protected function reqExec($ql){
-		$req = $this->db()->prepare($sql);
-		$req->execute();
-	}
-/*:
- *@method		reqFetchAll
- *@desc			execute a sql request use db() connexion
- *@return		{Array} the return of the sql request
- */	
-	protected function reqFetchAll($sql){
-		$req = $this->db()->prepare($sql);
-		$req->execute();
-		return $req->fetchAll(PDO::FETCH_ASSOC);
-	}	
+	return $pdo;
+}
+private function db(){
+	if(self::$pdo == null)
+		$this->self::setDb();
+	return self::$pdo;
+}
+protected function reqExec($ql){
+	$req = $this->db()->prepare($sql);
+	$req->execute();
+	$req->closeCursor();
+}
+private function reqFetchAll($sql){
+	$req = $this->db()->self::prepare($sql);
+	$req->execute();
+	while($data = $req->fetch(PDO::FETCH_ASSOC)){
+		$var[] = new $obj($data);
+	};
+	return $var;
+	$req->closeCursor();
+}
+protected function getAll($table){
+	$sql = "SELECT * FROM ".$table;
+	return $this->reqFetchAll($sql);
+}
 
+//STRING
+protected function strDisplayEncode($str, $length){
+	return substr(utf8_encode($str), 0, $length);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 //COOKIE MANAGEMENT
 /*:
- *@method		db
- *@desc	make	a connection pdo with the database or echo error message
- *@return		return 0 if succes 
- */	
+ *@method
+ *@param	{String}					
+ *@desc	make		setTempCookie with predefined short timestamp
+ *//*	
 	protected function setTempCookie($name, $value){
-		$timestamp = time() + 60 * $this;
+		$timestamp = time() + 60 * $this->shortTime;
 		setcookie($name, $value, $timestamp);
 	}
+	
+	
+	
+	
+	
 protected function tempCookieSub($post){
 	$this->setTempCookie('loginsub',$post['login']);
 	$this->setTempCookie('mail',$post['mail']);
@@ -326,6 +357,6 @@ private function createUser($login, $pass, $mail, $cookies){
 public function getLastArtHome($lang){
 	$sql="SELECT * FROM articles WHERE etiquette = 1 AND lang = '".$lang."' ORDER BY publi_date DESC LIMIT 1";
 	return $this->reqFetchAll($sql)[0];
-}
+}*/
 }
 ?>

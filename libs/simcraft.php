@@ -1,16 +1,14 @@
 <?php
-include'simcraft_config.php';
-include'simcraft_core.php';
-//include'simcraft_cookies.php';
-//include'simcraft_temp.php';
-//include'simcraft_rooter.php';
-//include'simcraft_timer.php';
-//include'simcraft_user.php';
-//include'simcraft_map.php';
-//include'simcraft_bat.php';
-//include'simcraft_dial.php';
-//include'simcraft_chat.php';
-//include'simcraft_forum.php';
-
-$simcraft = New SIMCRAFT($dbConfig, $tempTime, $stayTime);
+require_once 'simcraft/simcraft_config.php';
+require_once $scPath.'simcraft_core.php';
+require_once $scPath.'simcraft_router.php';
+//include $scPhpPath.'simcraft_cookies.php';
+//include $scPhpPath.'simcraft_temp.php';
+//include $scPhpPath.'simcraft_timer.php';
+//include $scPhpPath.'simcraft_user.php';
+//include $scPhpPath.'simcraft_map.php';
+//include $scPhpPath.'simcraft_bat.php';
+//include $scPhpPath.'simcraft_dial.php';
+//include $scPhpPath.'simcraft_chat.php';
+//include $scPhpPath.'simcraft_forum.php';
 ?>
